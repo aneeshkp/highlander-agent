@@ -1,0 +1,42 @@
+{
+  "rules": [
+    {
+      "id": 1,
+      "name": "instance.instance_shutdown",
+      "arg": "instance_id"
+    },
+    {
+      "id": 2,
+      "name": "instance.instance_failover",
+      "arg": "instance_id"
+    },
+    {
+      "id": 3,
+      "name": "instance.signal_instance",
+      "arg": "instance_id"
+    },
+    {
+      "id": 4,
+      "name": "instance.start_instance",
+      "arg": "instance_id"
+    },
+    {
+      "id": 4,
+      "name": "instance.configure_instance",
+      "arg": "instance_id"
+    },
+    {
+      "id": 5,
+      "name": "instance.notify_instance",
+      "arg1": "instance_id",
+      "arg2": "message",
+      "arg3": "[instance.rule_name_to_execute]"
+    },
+    {
+      "id": 6,
+      "name": "instance.log_message",
+      "arg1": "instance_id"
+    }
+  ]
+
+}

@@ -1,0 +1,490 @@
+<html>
+
+</head>
+
+<header>
+ <script type = "text/javascript" 
+         src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<h3>Node status</h3>
+<meta charset="utf-8"/>
+<style>
+@-webkit-keyframes heartbeat {
+  0% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+  14% {
+    -moz-transform: rotate(45deg) scale(1.3);
+    -ms-transform: rotate(45deg) scale(1.3);
+    -webkit-transform: rotate(45deg) scale(1.3);
+    transform: rotate(45deg) scale(1.3);
+  }
+  28% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+  42% {
+    -moz-transform: rotate(45deg) scale(1.3);
+    -ms-transform: rotate(45deg) scale(1.3);
+    -webkit-transform: rotate(45deg) scale(1.3);
+    transform: rotate(45deg) scale(1.3);
+  }
+  70% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+}
+@-moz-keyframes heartbeat {
+  0% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+  14% {
+    -moz-transform: rotate(45deg) scale(1.3);
+    -ms-transform: rotate(45deg) scale(1.3);
+    -webkit-transform: rotate(45deg) scale(1.3);
+    transform: rotate(45deg) scale(1.3);
+  }
+  28% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+  42% {
+    -moz-transform: rotate(45deg) scale(1.3);
+    -ms-transform: rotate(45deg) scale(1.3);
+    -webkit-transform: rotate(45deg) scale(1.3);
+    transform: rotate(45deg) scale(1.3);
+  }
+  70% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+}
+@-o-keyframes heartbeat {
+  0% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+  14% {
+    -moz-transform: rotate(45deg) scale(1.3);
+    -ms-transform: rotate(45deg) scale(1.3);
+    -webkit-transform: rotate(45deg) scale(1.3);
+    transform: rotate(45deg) scale(1.3);
+  }
+  28% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+  42% {
+    -moz-transform: rotate(45deg) scale(1.3);
+    -ms-transform: rotate(45deg) scale(1.3);
+    -webkit-transform: rotate(45deg) scale(1.3);
+    transform: rotate(45deg) scale(1.3);
+  }
+  70% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+}
+@keyframes heartbeat {
+  0% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+  14% {
+    -moz-transform: rotate(45deg) scale(1.3);
+    -ms-transform: rotate(45deg) scale(1.3);
+    -webkit-transform: rotate(45deg) scale(1.3);
+    transform: rotate(45deg) scale(1.3);
+  }
+  28% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+  42% {
+    -moz-transform: rotate(45deg) scale(1.3);
+    -ms-transform: rotate(45deg) scale(1.3);
+    -webkit-transform: rotate(45deg) scale(1.3);
+    transform: rotate(45deg) scale(1.3);
+  }
+  70% {
+    -moz-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+}
+body {
+  text-align: center;
+  padding: 50px;
+}
+.docIcon {
+    background: #eee;
+ 
+    background: -webkit-linear-gradient(top, #ddd 0, #eee 15%, #fff 40%, #fff 70%, #eee 100%);
+    background: -moz-linear-gradient(top, #ddd 0, #eee 15%, #fff 40%, #fff 70%, #eee 100%);
+    background: -o-linear-gradient(top, #ddd 0, #eee 15%, #fff 40%, #fff 70%, #eee 100%);
+    background: -ms-linear-gradient(top, #ddd 0, #eee 15%, #fff 40%, #fff 70%, #eee 100%);
+    background: linear-gradient(top, #ddd 0, #eee 15%, #fff 40%, #fff 70%, #eee 100%);
+ 
+    border: 1px solid #FF0000;
+    display: block;
+    width: 40px;
+    height: 56px;
+    position: relative;
+    margin: 42px auto;
+}
+
+/* Styles for old versions of IE */
+.heartbeat {
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+/* :not(:required) hides this rule from IE9 and below */
+.heartbeat:not(:required) {
+  -webkit-animation: heartbeat 1300ms ease 0s infinite normal;
+  -khtml-animation: heartbeat 1300ms ease 0s infinite normal;
+  -moz-animation: heartbeat 1300ms ease 0s infinite normal;
+  -ms-animation: heartbeat 1300ms ease 0s infinite normal;
+  -o-animation: heartbeat 1300ms ease 0s infinite normal;
+  animation: heartbeat 1300ms ease 0s infinite normal;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 36px;
+  height: 36px;
+  -moz-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  -webkit-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+.heartbeat:not(:required):after, .heartbeat:not(:required):before {
+  position: absolute;
+  content: "";
+  background: #e87;
+}
+.heartbeat:not(:required):before {
+  -moz-border-radius-topleft: 12px;
+  -webkit-border-top-left-radius: 12px;
+  border-top-left-radius: 12px;
+  -moz-border-radius-bottomleft: 12px;
+  -webkit-border-bottom-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  top: 12px;
+  left: 0;
+  width: 36px;
+  height: 24px;
+}
+.heartbeat:not(:required):after {
+  -moz-border-radius-topleft: 12px;
+  -webkit-border-top-left-radius: 12px;
+  border-top-left-radius: 12px;
+  -moz-border-radius-topright: 12px;
+  -webkit-border-top-right-radius: 12px;
+  border-top-right-radius: 12px;
+  top: 0;
+  left: 12px;
+  width: 24px;
+  height: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+table {
+  color: #333;
+  font-family: sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+  text-align: left;
+  line-height: 40px;
+  border-spacing: 1;
+  border: 2px solid #975997;
+ 
+  margin: 50px auto;
+}
+
+thead tr:first-child {
+  background: #975997;
+  color: #fff;
+  
+}
+
+th {font-weight: bold;}
+th:first-child, td:first-child {padding: 0 15px 0 20px;}
+
+thead tr:last-child th {border-bottom: 3px solid #ddd;}
+
+tr:hover {background-color: #ffeeff;}
+ 
+td {border-bottom: 1px solid #ddd;border-right: 1px solid #ddd;}
+
+
+
+.button {
+  color: #696969;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.alterar:hover {
+  color: #0a79df;
+}
+
+.excluir:hover {
+  color: #dc2a2a;
+}
+
+</style>
+
+</header>
+<body>
+
+<p>Register Agent</p>
+
+
+
+
+
+<TABLE>
+<TR ><Th colspan="2">Register Server</Th></TR>
+<TR>
+<TD><input type="textbox" id="r1"/><input type=button value="connect" id="R1_button" onclick="javascript:openwebsocketconnection(document.getElementById('r1').value,'div_r1');">
+<input type="button" name="disconnect" value="X" onclick="javascript:disconnect(document.getElementById('r1').value)"/></TD>
+<TD><input type="textbox" id="r2"/><input type=button value="connect"  onclick="javascript:openwebsocketconnection(document.getElementById('r2').value,'div_r2');">
+<input type="button" name="disconnect"  value="X" onclick="javascript:disconnect(document.getElementById('r2').value)"/></TD></TR>
+<tr><td><div id="status_div_r1">Not Connected</div></td><td><div id="status_div_r2">Not Connected</td></tr>
+<tr style="vertical-align:top" ><td><div id="div_r1"></div></td><td><div id="div_r2"></div></td></tr>
+</TABLE>
+
+
+</TABLE>
+
+<script>
+
+
+
+var websocketendpoints=[];
+var connections=[];
+
+function disconnect(domain){
+ for (var i=0;i<websocketendpoints.length;i++){
+      if (websocketendpoints[i.toString()]==domain){
+        connections[domain].close();
+        websocketendpoints.splice(i.toString(),1)
+        return;
+       }
+	}
+
+}
+function openwebsocketconnection(domain,divid){
+
+if(domain==='') {
+   alert("domain cannot be empty");
+   return;
+   }
+   
+  uri="ws://"+ domain +":3002/events";
+  var found=true;
+  
+   for (var i=0;i<websocketendpoints.length;i++){
+      if (websocketendpoints[i.toString()]==domain){
+        alert("already registered");
+        found=true;
+         return;
+       }
+	}
+  
+  
+  websocketendpoints.push(domain);
+	try{
+		var wsSocket=new WebSocket(uri);
+		
+		wsSocket.onmessage=function(event){ 
+			var jsonObject=JSON.parse(event.data);
+			
+			//cleartrData("table_"+divid);
+			var tbl=document.getElementById("table_"+divid);
+			//var jsonObject=JSON.parse(message);
+			var tid="#table_"+divid
+			$("#table_"+divid).closest('tr').find('#event'+divid).append(jsonObject.event  +"<br/>");
+			$("#table_"+divid).closest('tr').find('#start_time'+divid).append(jsonObject.event_start_time  +"<br/>");
+			$("#table_"+divid).closest('tr').find('#event_type'+divid).append(jsonObject.event_type +"<br/>");
+			row=3;
+			tbl.appendChild(create_trdata("-",jsonObject.event,"","","",""));
+			for (var i=0;i<jsonObject.actions.length;i++){
+				tbl.appendChild(create_trdata(jsonObject.actions[i].index,jsonObject.actions[i].method,jsonObject.actions[i].id,
+														jsonObject.actions[i].elapsed_time,jsonObject.actions[i].time_started,
+														jsonObject.actions[i].time_completed));
+			}
+     //document.getElementById(divid).innerHTML+='<div style="height:40px;overflow:auto;"><li class="received"><span>Received:</span>'+JSON.stringify(message) +'</li></div>';
+     };
+     wsSocket.onerror=function(){document.getElementById("status_"+divid).innerHTML="ERROR";};
+     wsSocket.onclose=function(){
+     document.getElementById(divid).innerHTML="";
+     document.getElementById("status_"+divid).innerHTML="CLOSED";};
+     wsSocket.onopen=function(){
+     connections[domain]=wsSocket;
+     document.getElementById("status_"+divid).innerHTML="CONNECTED";
+     tbl=tableCreate("table_"+divid,divid);
+     document.getElementById(divid).appendChild(tbl);
+     wsSocket.send(domain);};
+    }catch(error){
+    alert(error);
+        alert("connection failed");
+    }
+  
+}
+
+
+function tableCreate(tableid,id) {
+    
+    var tbl = document.createElement('table');
+    tbl.style.width = '100%';
+    
+    tbl.setAttribute('id', tableid);
+    
+    //header
+    var tr = document.createElement('tr');
+    tr.setAttribute("id","header");
+    var td_event_type = document.createElement('th');
+    td_event_type.appendChild(document.createTextNode("event_type"));
+    tr.appendChild(td_event_type);
+	var td_start_time = document.createElement('th');
+    td_start_time.appendChild(document.createTextNode("start_time"));
+    tr.appendChild(td_start_time);
+    var td_event = document.createElement('th');
+    td_event.setAttribute("colspan","4");
+    td_event.appendChild(document.createTextNode("event"));
+    tr.appendChild(td_event);
+    var thead = document.createElement('thead');
+    thead.appendChild(tr);
+    tbl.appendChild(thead);
+    
+    //data
+    var tr_data = document.createElement('tr');
+    var td_event_type_data = document.createElement('td');
+    td_event_type_data.setAttribute("id","event_type"+id);
+    tr_data.appendChild(td_event_type_data);
+    var td_start_time_data = document.createElement('td');
+    td_start_time_data.setAttribute("id","start_time"+id);
+    tr_data.appendChild(td_start_time_data);
+    var td_event_data = document.createElement('td');
+    td_event_data.setAttribute("colspan","4");
+    td_event_data.setAttribute("id","event"+id);
+    tr_data.appendChild(td_event_data);
+    tbl.appendChild(tr_data);
+    
+    //actions
+    var tr_actions = document.createElement('tr');
+    var td_index = document.createElement('th');
+    td_index.appendChild(document.createTextNode("index"));
+    tr_actions.appendChild(td_index);
+    var td_method = document.createElement('th');
+    td_method.appendChild(document.createTextNode("method"));
+    tr_actions.appendChild(td_method);
+    var td_id = document.createElement('th');
+    td_id.appendChild(document.createTextNode("id"));
+    tr_actions.appendChild(td_id);
+    
+    var td_elapsed_time = document.createElement('th');
+    td_elapsed_time.appendChild(document.createTextNode("elapsed_time"));
+    tr_actions.appendChild(td_elapsed_time);
+    
+    var td_time_started = document.createElement('th');
+    td_time_started.appendChild(document.createTextNode("time_started"));
+    tr_actions.appendChild(td_time_started);
+    
+    var td_time_completed = document.createElement('th');
+    td_time_completed.appendChild(document.createTextNode("time_completed"));
+    tr_actions.appendChild(td_time_completed);
+    tr_actions.setAttribute("id","actions");
+    var thead = document.createElement('thead');
+    thead.appendChild(tr_actions);
+    
+    tbl.appendChild(thead);
+    
+    return tbl;
+    
+}
+
+function cleartrData(tableid){
+	tableobject=document.getElementById(tableid);
+	tractions=tableobject.rows.namedItem("actions");
+	var rowCount=tableobject.rows.length;
+	if(rowCount>2){
+	   for(var i = rowCount-1;i>2;i--){
+		  tableobject.deleteRow(i);
+	   }
+	 }
+	 
+    
+}
+
+
+
+function create_trdata(index,method,id,elapsed_time,time_started,time_completed){
+//create tr data
+    var td_type="td";
+    if (index=="-"){
+    	td_type="th"
+    }
+	var tr = document.createElement('tr');
+    var td_index = document.createElement(td_type);
+    td_index.appendChild(document.createTextNode(index));
+    tr.appendChild(td_index);
+    var td_method = document.createElement(td_type);
+    td_method.appendChild(document.createTextNode(method));
+    tr.appendChild(td_method);
+    var td_id = document.createElement(td_type);
+    td_id.appendChild(document.createTextNode(id));
+    tr.appendChild(td_id);
+    
+    var td_elapsed_time = document.createElement(td_type);
+    td_elapsed_time.appendChild(document.createTextNode(elapsed_time));
+    tr.appendChild(td_elapsed_time);
+    
+    var td_time_started = document.createElement(td_type);
+    td_time_started.appendChild(document.createTextNode(time_started));
+    tr.appendChild(td_time_started);
+    
+    var td_time_completed = document.createElement(td_type);
+    td_time_completed.appendChild(document.createTextNode(time_completed));
+    tr.appendChild(td_time_completed);
+    return tr;
+}    
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "instances_to_monitor": [
+    {
+      "id": "b515692e-a27d-11e5-bf7f-feff819cdc9f",
+      "agent_status": "NEW",
+      "on_fail_event": [
+        {
+          "rule": "instance.shutdown_instance",
+          "arg": "{'instance_id':'b515692e-a27d-11e5-bf7f-feff819cdc9f'}"
+        },
+       {
+          "rule": "instance.notify_instance",
+          "arg": "{instance_id:'c505eeb2-a27d-11e5-bf7f-feff819cdc9f','message':'message','rule':'instance.start_instance','notification_type'='info'}"
+        }
+      ]
+    }
+  ],
+  "instances": [
+    {
+      "id": "b515692e-a27d-11e5-bf7f-feff819cdc9f",
+      "name": "Test Instance 1",
+      "cloud_id": "e7e68a04-a27d-11e5-bf7f-feff819cdc9f",
+      "project_id": "eb992d64-a27d-11e5-bf7f-feff819cdc9f",
+      "host_name": "127.0.0.1",
+      "project_name": "Admin"
+    },
+    {
+      "id": "c505eeb2-a27d-11e5-bf7f-feff819cdc9f",
+      "name": "instance_name",
+      "cloud_id": "fac97e9c-a27d-11e5-bf7f-feff819cdc9f",
+      "project_id": "eb992d64-a27d-11e5-bf7f-feff819cdc9f",
+      "host_name": "127.0.0.1",
+      "project_name": "Admin"
+    }
+  ]
+}
+

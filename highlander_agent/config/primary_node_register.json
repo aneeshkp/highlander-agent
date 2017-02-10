@@ -1,0 +1,37 @@
+{
+  "instances_to_monitor": [
+    {
+      "id": "instance_id",
+      "agent_status": "NEW|REGISTERED|MONITORING|SUSPENDED",
+      "on_fail_event": [
+        {
+          "rule": "instance.shutdown_instance",
+          "arg": "{'instanceId':'instanceid'}"
+        },
+       {
+          "rule": "instance.notify_instance",
+          "arg": "{instance_id:'instance_id','message':'message','rule':'instance.start_instance','notification_type'='info'}"
+        }
+      ]
+    }
+  ],
+  "instances": [
+    {
+      "id": "instance_id",
+      "name": "instance_name",
+      "cloud_id": "cloud_id",
+      "project_id": "tenant_cloud_id",
+      "host_name": "host_name",
+      "project_name": "project_name"
+    },
+    {
+      "id": "instance_id",
+      "name": "instance_name",
+      "cloud_id": "cloud_id",
+      "project_id": "tenant_cloud_id",
+      "host_name": "host_name",
+      "project_name": "project_name"
+    }
+  ]
+}
+

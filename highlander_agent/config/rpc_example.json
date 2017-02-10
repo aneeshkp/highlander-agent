@@ -1,0 +1,153 @@
+{
+  "monitor_types": [
+    "instance"
+  ],
+  "instance_to_monitor": {
+    "id": "1a1c8b46-bee3-4734-81f6-1a3b46581ca2",
+    "instance": {
+      "on_ok_event":[
+
+      ],
+      "on_fail_event": [
+         {
+          "rule": {
+            "method": "publish",
+            "arg": {
+              "instance_id": "instancews",
+              "message": "Notifying on fail event"
+            }
+          }
+        },
+        {
+
+          "rule": {
+            "method": "notify_instance",
+            "arg": {
+              "instance_id": "1a355d66-5b12-4450-ab9a-9bfad3d6ab23",
+              "message": {
+                "rule": {
+                  "method": "wakeup_instance",
+                  "arg": {
+                    "instance_id": "1a355d66-5b12-4450-ab9a-9bfad3d6ab23",
+                    "message": "fail over"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "rule": {
+            "method": "shutdown_monitoring",
+            "arg": {
+              "instance_id": "1a1c8b46-bee3-4734-81f6-1a3b46581ca2",
+              "message": "something"
+            }
+          }
+        }
+      ]
+    },
+    "network": {
+      "on_fail_event": [
+        {
+          "rule": {
+            "method": "notify_instance",
+            "arg": {
+              "instance_id": "1a355d66-5b12-4450-ab9a-9bfad3d6ab23",
+              "message": {
+                "rule": {
+                  "method": "wakeup_instance",
+                  "arg": {
+                    "instance_id": "1a355d66-5b12-4450-ab9a-9bfad3d6ab23",
+                    "message": "fail over"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "rule": {
+            "method": "shutdown_monitoring",
+            "arg": {
+              "instance_id": "1a1c8b46-bee3-4734-81f6-1a3b46581ca2",
+              "message": "something"
+            }
+          }
+        }
+      ]
+    },
+    "hypervisor": {
+      "hostname": "localhost",
+      "method": "hypervisor_heartbeat",
+      "on_fail_event": [
+        {
+          "rule": {
+            "method": "publish",
+            "arg": {
+              "instance_id": "instancews",
+              "message": "Notifying on fail event"
+            }
+          }
+        },
+        {
+          "rule": {
+            "method": "log_message",
+            "arg": {
+              "instance_id": "1a1c8b46-bee3-4734-81f6-1a3b46581ca",
+              "message": "hypervisor message"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "instances": [
+    {
+      "id": "1a355d66-5b12-4450-ab9a-9bfad3d6ab23",
+      "name": "instance-00000d9e",
+      "cloud_id": "12ea5f5c-6c63-488c-a479-3ebea3b6b5dd",
+      "project_id": "46bd8ec4c8b846daba0423e6b9adf989",
+      "host_name": "computeax-64.democloud1.com",
+      "project_name": "admin",
+      "ports": [
+        {
+          "id": "5a0666652-49d9-4bd9-86f6-5a2f18aa269c",
+          "name": "tapd7d113f4-1b"
+        }
+      ],
+      "resiliency_strategy": "ufr",
+      "resiliency_side": 2
+    },
+    {
+      "id": "1a1c8b46-bee3-4734-81f6-1a3b46581ca2",
+      "name": "instance-00000d9f",
+      "cloud_id": "1b68ae3c-ab37-44de-bef1-5aa6b54d1e0a",
+      "project_id": "46bd8ec4c8b846daba0423e6b9adf989",
+      "host_name": "computeax-64.democloud1.com",
+      "project_name": "admin",
+      "ports": [
+        {
+          "id": "5a0666652-49d9-4bd9-86f6-5a2f18aa269c",
+          "name": "eth1"
+        }
+      ],
+      "resiliency_strategy": "ft",
+      "resiliency_side": 1
+    },
+    {
+      "id": "f20763cc-f6d6-4f6d-b2a2-6dd8e1cb65f6",
+      "name": "instance-00000d9d",
+      "cloud_id": "4dbb17dc-df18-4d0f-95ac-0d7e74b1ee90",
+      "project_id": "46bd8ec4c8b846daba0423e6b9adf989",
+      "host_name": "computeax-65.democloud1.com",
+      "project_name": "admin",
+      "ports": [
+        {
+          "id": "5a0666652-49d9-4bd9-86f6-5a2f18aa269c",
+          "name": "tapd7d113f4-1b"
+        }
+      ]
+    }
+  ]
+}
